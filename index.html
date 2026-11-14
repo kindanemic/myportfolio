@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanna | Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav aria-label="Main navigation">
+        <a href="#home" class="active" onclick="showPage('home', this); return false;">HOME</a>
+        <a href="#personal" onclick="showPage('personal', this); return false;">ABOUT ME</a>
+        <a href="#education" onclick="showPage('education', this); return false;">EDUCATION</a>
+        <a href="#skills" onclick="showPage('skills', this); return false;">SKILLS</a>
+        <a href="#java" onclick="showPage('java', this); return false;">JAVA CODE</a>
+    </nav>
+
+    <main>
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <header>
+                <div class="hero-text">
+                    <span class="welcome-label">WELCOME TO MY PORTFOLIO</span>
+                    <h1>Hanna Jhoy<br>G. Marvel</h1>
+                    <p><strong>BSIT Student | Aspiring UI/UX Designer</strong></p>
+                    <p>I enjoy creativity, graphic design, and learning about technology.</p>
+                </div>
+            </header>
+        </div>
+
+        <!-- ABOUT ME PAGE -->
+        <div id="personal" class="page">
+            <section class="content-card">
+                <h2>Personal Information</h2>
+
+                <h3>About Me</h3>
+                <p>
+                    Hi! I'm Hanna, an Information Technology student who enjoys
+                    creativity, technology, and graphic design. I am currently
+                    learning HTML, CSS, and Java to improve my skills in web
+                    development and programming. In the future, I want to become
+                    a UI/UX designer and create websites and applications that
+                    are both useful and easy to use.
+                </p>
+
+                <h3>Personal Details</h3>
+                <div class="detail"><strong>Full Name:</strong> Hanna Jhoy G. Marvel</div>
+                <div class="detail"><strong>Course:</strong> Bachelor of Science in Information Technology</div>
+                <div class="detail"><strong>Section:</strong> BSIT-1B</div>
+                <div class="detail"><strong>Contact Number:</strong> 09242133975</div>
+                <div class="detail"><strong>Email:</strong> marvelhannajhoygarcia@gmail.com</div>
+            </section>
+        </div>
+
+        <!-- EDUCATION PAGE -->
+        <div id="education" class="page">
+            <section class="content-card">
+                <h2>Educational Background</h2>
+
+                <div class="education-item">
+                    <h3>College</h3>
+                    <p>Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+                    <p>Course: Bachelor of Science in Information Technology</p>
+                    <p>Status: Currently Studying</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Senior High School</h3>
+                    <p>Eduardo L. Joson Memorial High School</p>
+                    <p>Strand: ICT</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Junior High School</h3>
+                    <p>Eduardo L. Joson Memorial High School</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Elementary</h3>
+                    <p>Casanova Elementary School</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- SKILLS PAGE -->
+        <div id="skills" class="page">
+            <section class="content-card">
+                <h2>My Skills</h2>
+
+                <div class="skill">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>HTML - Basic Web Development</li>
+                        <li>CSS - Basic Website Styling</li>
+                        <li>Java - Basic Programming</li>
+                        <li>Graphic Design</li>
+                        <li>Microsoft Word, PowerPoint and Excel</li>
+                    </ul>
+                </div>
+
+                <div class="skill">
+                    <h3>Personal Skills</h3>
+                    <ul>
+                        <li>Creativity</li>
+                        <li>Organization</li>
+                        <li>Willingness to Learn</li>
+                        <li>Teamwork</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- JAVA CODE PAGE: only the Java source code is displayed here -->
+        <div id="java" class="page">
+            <section class="content-card">
+                <h2>Java Code</h2>
+
+                <h3>Final Examination Ranking</h3>
+                <p>
+                    This Java program collects the examination scores of 15 students.
+                    It checks that each score is between 0 and 100, calculates the
+                    average score, counts how many students passed, and sorts the
+                    scores from highest to lowest. It also displays the highest and
+                    lowest scores.
+                </p>
+
+                <h3>Source Code</h3>
+                <div class="code-container">
+<pre><code>// Ginagamit ito para makakuha ng input mula sa user
+import java.util.Scanner;
+
+// Pangalan ng buong program
+public class FinalExaminationRanking {
+
+    // Dito nagsisimula ang program
+    public static void main(String[] args) {
+
+        // Para makapag-input ng score ang user
+        Scanner input = new Scanner(System.in);
+
+        // Array na lalagyan ng scores ng 15 estudyante
+        int[] scores = new int[15];
+
+        // Lalagyan ng kabuuang score
+        int total = 0;
+
+        // Nagbibilang ng mga estudyanteng pumasa
+        int passed = 0;
+
+        // Uulit ito para makuha ulit ang scores ng 15 student
+        for (int i = 0; i &lt; 15; i++) {
+
+            // Humihingi ng score sa bawat estudyante
+            System.out.print("Enter the score: " + (i + 1) + ": ");
+
+            // Taga-save ng score sa array
+            scores[i] = input.nextInt();
+
+            // Taga-tingin kung ang score ay valid
+            while (scores[i] &lt; 0 || scores[i] &gt; 100) {
+
+                // Hihingi ulit ng score kapag invalid ang inilagay
+                System.out.print("Invalid score. Enter between 0-100 only: ");
+
+                // Tatanggap ng bagong score
+                scores[i] = input.nextInt();
+            }
+
+            // Idinadagdag ang score sa total
+            total = total + scores[i];
+
+            // Titingnan kung ang score ay 75 pataas
+            if (scores[i] &gt;= 75) {
+
+                // Dadagdagan ng isa ang bilang ng mga pumasa
+                passed++;
+            }
+        }
+
+        // Kinukuha ang average sa pamamagitan ng paghati ng total sa 15
+        double average = (double) total / 15;
+
+        // Inaayos ang scores mula pinakamataas hanggang pinakamababa
+        for (int i = 0; i &lt; 14; i++) {
+
+            // Kinukumpara ang magkatabing scores
+            for (int j = 0; j &lt; 14 - i; j++) {
+
+                // Tinitingnan kung mas mababa ang score sa kaliwa
+                if (scores[j] &lt; scores[j + 1]) {
+
+                    // Pansamantalang itatago ang score sa temp
+                    int temp = scores[j];
+
+                    // Ilalagay ang mas mataas na score sa kaliwa
+                    scores[j] = scores[j + 1];
+
+                    // Ilalagay ang dating score sa kanan
+                    scores[j + 1] = temp;
+                }
+            }
+        }
+
+        // Ipinapakita ang title ng result
+        System.out.println("\\nFinal Examination Ranking");
+
+        // Ipapakita ang average na may dalawang decimal places
+        System.out.printf("Average Score: %.2f\\n", average);
+
+        // Ipapakita kung ilan ang pumasa
+        System.out.println("Students Passed: " + passed);
+
+        // Ipapakita ang pinakamataas na score
+        System.out.println("Highest Score: " + scores[0]);
+
+        // Ipapakita ang pinakamababang score
+        System.out.println("Lowest Score: " + scores[14]);
+
+        // Ipapakita ang pamagat ng listahan ng scores
+        System.out.println("\\nSorted Scores:");
+
+        // Uulit para maipakita ang lahat ng 15 scores
+        for (int i = 0; i &lt; 15; i++) {
+
+            // Ipapakita ang index at score ng bawat estudyante
+            System.out.println("Index " + i + ": " + scores[i]);
+        }
+
+        // Isinasara ang Scanner
+        input.close();
+    }
+}</code></pre>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Hanna Jhoy G. Marvel</p>
+        <p>BSIT Student | Personal Portfolio</p>
+    </footer>
+
+    <script>
+        function showPage(pageId, clickedLink) {
+            // Hide all pages first
+            const pages = document.querySelectorAll(".page");
+            pages.forEach(function(page) {
+                page.classList.remove("active");
+            });
+
+            // Show only the selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add("active");
+            }
+
+            // Update the active navigation button
+            const navLinks = document.querySelectorAll("nav a");
+            navLinks.forEach(function(link) {
+                link.classList.remove("active");
+            });
+
+            if (clickedLink) {
+                clickedLink.classList.add("active");
+            } else {
+                const matchingLink = document.querySelector('nav a[href="#' + pageId + '"]');
+                if (matchingLink) matchingLink.classList.add("active");
+            }
+
+            // Keep the page at the top after changing sections
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+            // Update the URL hash so the selected page can be bookmarked
+            history.replaceState(null, "", "#" + pageId);
+        }
+
+        // Open the selected page from the URL, or HOME by default
+        window.addEventListener("DOMContentLoaded", function() {
+            const pageFromUrl = window.location.hash.replace("#", "");
+            const validPage = document.getElementById(pageFromUrl);
+            showPage(validPage ? pageFromUrl : "home");
+        });
+    </script>
+
+</body>
+</html>

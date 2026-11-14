@@ -1,0 +1,235 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,.95), transparent 35%),
+                radial-gradient(circle at 80% 30%, rgba(255,192,203,.35), transparent 30%),
+                radial-gradient(circle at 50% 90%, rgba(255,255,255,.8), transparent 40%),
+                linear-gradient(135deg, #ffffff, #fff0f5, #f8dce8, #fcebf2);
+            background-attachment: fixed;
+            color: #65483f;
+            font-family: Georgia, serif;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: #c95f8b;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: sticky;
+            top: 10px;
+            z-index: 20;
+            width: min(95%, 1000px);
+            margin: 15px auto;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(120, 55, 83, .2);
+        }
+
+        nav a {
+            color: #fffafc;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: .85rem;
+            letter-spacing: .4px;
+            padding: 9px 15px;
+            border-radius: 25px;
+            transition: .3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #fff0f5;
+            color: #c95f8b;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            min-height: 65vh;
+            margin: 28px auto 40px;
+        }
+
+        /* Each navigation item displays only its own page */
+        .page {
+            display: none;
+            animation: fadeIn .35s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            min-height: 300px;
+            margin: 30px auto 22px;
+            padding: 45px 48px;
+            background: linear-gradient(135deg, #f8b8d0 0%, #e98bb8 35%, #d66ba5 65%, #f4a9d0 100%);
+            border: 1px solid rgba(255,255,255,.7);
+            border-radius: 22px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,.2);
+        }
+
+        header h1 {
+            color: #65483f;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.15;
+            margin-bottom: 12px;
+            text-shadow: 0 3px 12px rgba(130,45,95,.2);
+        }
+
+        header p {
+            color: #fff5fa;
+            margin-bottom: 7px;
+        }
+
+        .welcome-label {
+            display: inline-block;
+            background: rgba(255,255,255,.35);
+            color: #65483f;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font: bold .8rem Arial, sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        section.content-card {
+            background: rgba(255,255,255,.88);
+            padding: 28px;
+            margin: 20px 0;
+            border: 1px solid #edcbd8;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.13);
+        }
+
+        h2 {
+            color: #9b6260;
+            border-bottom: 1px solid #e7c1bd;
+            padding-bottom: 9px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #81574d;
+            margin: 18px 0 8px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .detail {
+            background-color: #fff3f7;
+            padding: 11px 14px;
+            border-left: 3px solid #d88eaa;
+            border-radius: 7px;
+            margin: 9px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .education-item,
+        .skill {
+            background-color: #fff3f7;
+            padding: 15px 18px;
+            margin: 12px 0;
+            border-left: 4px solid #d88eaa;
+            border-radius: 8px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .code-container {
+            background-color: #3d2b28;
+            color: #ffe9df;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+
+        pre {
+            white-space: pre;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: .88rem;
+            line-height: 1.6;
+            tab-size: 4;
+        }
+
+        .page-intro {
+            color: #795d55;
+            margin-bottom: 18px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #c95f8b;
+            color: #fff8fb;
+            padding: 22px 15px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                top: 5px;
+                gap: 5px;
+                padding: 12px 8px;
+            }
+
+            nav a {
+                font-size: .72rem;
+                padding: 8px 10px;
+            }
+
+            main {
+                width: 92%;
+            }
+
+            header {
+                min-height: 250px;
+                margin: 18px auto;
+                padding: 28px 22px;
+                text-align: center;
+            }
+
+            section.content-card {
+                padding: 21px 18px;
+            }
+
+            .code-container {
+                padding: 14px;
+            }
+
+            pre {
+                font-size: .78rem;
+            }
+        }
